@@ -1,0 +1,8 @@
+#!/bin/sh
+ssh -i ~/.ssh/key.pem -o StrictHostKeyChecking=no appuser@3.86.167.24 <<EOF>>
+ cd ~/node-app
+ git pull
+ npm install — production
+ pm2 restart all
+ exit
+EOF
